@@ -52,7 +52,7 @@ class WebhookController extends Controller
             if ($fraudStatus == 'challenge') {
                 $order->status = 'challenge';
             } else if ($fraudStatus == 'accept') {
-                $order->status = 'accept';
+                $order->status = 'success';
             }
         } else if ($transactionStatus == 'settlement') {
             $order->status = 'success';
@@ -86,3 +86,4 @@ class WebhookController extends Controller
         return response()->json("ok");
     }
 }
+
